@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_main)
 
         webView.settings.javaScriptEnabled = true
@@ -48,8 +49,7 @@ class MainActivity : AppCompatActivity() {
     internal open inner class MyChromeClient : WebChromeClient() {
 
         override fun onReceivedTitle(view: WebView, titles: String) {
-            super.onReceivedTitle(view, titles)
-            title = titles
+
         }
     }
 }
